@@ -73,9 +73,26 @@ export default function Home() {
         {isLoading ? (
           <Spinner/>
         ) : account ? (
-          <Flex>
-            OK
-          </Flex>
+          (() => {
+            switch(sellingStep) {
+              case null:
+                return <Spinner/>
+              case 0: 
+                return <Before/>
+              case 1:
+                return <WhitelistSale 
+                  BNWlSalePrice = {BNWlSalePrice}
+                  wlSalePrice = {wlSalePrice}
+                  totalSupply = {totalSupply}
+                  getDatas = {getDatas}/>
+              case 2: 
+                return <PublicSale/>
+              case 3:
+                return <Reveal/>
+              case 4: 
+                return <SoldOut/>
+            }
+          })()
         ) : (
           <Text fontSize={30}>
             Please connect your wallet
