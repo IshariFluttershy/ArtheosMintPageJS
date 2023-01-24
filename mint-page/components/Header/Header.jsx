@@ -56,6 +56,8 @@ const Header = () => {
             my="md"
             px={["sm", "sm", "lg", "lg"]}
             p="2rem"
+            position="sticky"
+            top={0}
         >
             <Text
                 fontSize="2rem"

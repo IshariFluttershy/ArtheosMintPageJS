@@ -7,6 +7,10 @@ import Reveal from "../components/Reveal/Reveal"
 import WhitelistSale from "../components/WhitelistSale/WhitelistSale"
 import PublicSale from "../components/PublicSale/PublicSale"
 import SoldOut from "../components/SoldOut/SoldOut"
+import SaleStep from "../components/SaleStep/SaleStep"
+import CurrentSaleStep from "../components/CurrentSaleStep/CurrentSaleStep"
+
+
 import { ethers } from "ethers";
 
 
@@ -57,7 +61,7 @@ export default function Home() {
     setTotalSupply(totalSupply);*/
 
 
-    setSellingStep(0);
+    setSellingStep(1);
     /*setWlSalePrice(wlSalePrice);
     setBNWlSalePrice(wlSalePriceBN);
     setPublicSalePrice(publicSalePrice);
@@ -69,7 +73,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Flex align="center" justify="center">
+      <Flex align="center" justify="center" h="86vh">
         {isLoading ? (
           <Spinner/>
         ) : account ? (
@@ -80,25 +84,42 @@ export default function Home() {
               case 0: 
                 return <Before/>
               case 1:
-                return <WhitelistSale 
-                  BNWlSalePrice = {BNWlSalePrice}
-                  wlSalePrice = {wlSalePrice}
-                  totalSupply = {totalSupply}
-                  getDatas = {getDatas}/>
-              case 2: 
-                return <PublicSale/>
-              case 3:
-                return <Reveal/>
-              case 4: 
-                return <SoldOut/>
+                return <Flex
+                  align="center"
+                  flexDir="column"
+                  my="md"
+                  px={["sm", "sm", "lg", "lg"]}
+                  p="2rem"
+                >
+                  <CurrentSaleStep
+
+                  />
+                </Flex>
             }
           })()
-        ) : (
-          <Text fontSize={30}>
+          ) : (
+            <Text fontSize={30}>
             Please connect your wallet
           </Text>
         )}
       </Flex>
+        <SaleStep 
+          startTimestamp={1678143604}
+          step="1"  
+        />
+        <SaleStep 
+          startTimestamp={1680818404}
+          step="2"  
+        />
+        <SaleStep 
+          startTimestamp={1683410404}
+          step="3"  
+        />
+        <SaleStep 
+          startTimestamp={1686088804}
+          step="4"  
+        />
     </Layout>
   )
 }
+
