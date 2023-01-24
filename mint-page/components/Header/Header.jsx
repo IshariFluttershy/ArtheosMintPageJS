@@ -84,7 +84,7 @@ const Header = () => {
                             Connected Wallet : 
                             <chakra.span 
                                 fontWeight="bold"
-                                color="orange.400"
+                                color="cyan.400"
                             >
                                 {account.substring(0, 6)}...{account.substring(account.length - 4, account.lenght)}
                             </chakra.span>
@@ -93,7 +93,7 @@ const Header = () => {
                     </Flex>
                 ) : (
                     <Button
-                        colorScheme="orange"
+                        colorScheme="cyan"
                         onClick={() => connectWallet()}
                         fontSize={15}
                     >

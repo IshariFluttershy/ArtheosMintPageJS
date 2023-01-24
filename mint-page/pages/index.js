@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Flex, Button, Text, useToast, Spinner } from "@chakra-ui/react";
+import { Flex, Button, Text, useToast, Spinner, Spacer } from "@chakra-ui/react";
 import Layout from "../components/Layout/Layout"
 import useEthersProvider from "../hooks/useEthersProvider";
 import Before from "../components/Before/Before"
@@ -92,33 +92,55 @@ export default function Home() {
                   p="2rem"
                 >
                   <CurrentSaleStep
-
+                    step="1"
                   />
                 </Flex>
             }
           })()
           ) : (
-            <Text fontSize={30}>
-            Please connect your wallet
-          </Text>
+            <Flex 
+              borderColor="black" 
+              borderWidth={4} 
+              borderRadius="5rem"
+              //w="100%"
+              padding="2vh"
+              bgColor="#000000b0"
+              boxShadow="0px 0px 0.6rem grey"
+              margin="1vh"
+            >
+              <Text fontSize={30}>
+                Please connect your wallet
+              </Text>
+            </Flex>
         )}
       </Flex>
-        <SaleStep 
-          startTimestamp={1678143604}
-          step="1"  
-        />
+      <Flex direction="column" w="80%">
+        <Flex justify="right">
+          <SaleStep 
+            startTimestamp={1678143604}
+            step="1"  
+          />
+        </Flex>
+        <Flex justify="left">
+
         <SaleStep 
           startTimestamp={1680818404}
           step="2"  
         />
-        <SaleStep 
-          startTimestamp={1683410404}
-          step="3"  
-        />
-        <SaleStep 
-          startTimestamp={1686088804}
-          step="4"  
-        />
+        </Flex>
+        <Flex justify="right">
+          <SaleStep 
+            startTimestamp={1683410404}
+            step="3"  
+          />
+        </Flex>
+        <Flex justify="left">
+          <SaleStep 
+            startTimestamp={1686088804}
+            step="4"  
+          />
+        </Flex>
+      </Flex>
     </Layout>
   )
 }

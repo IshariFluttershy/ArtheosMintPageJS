@@ -41,18 +41,28 @@ const CurrentSaleStep = (props) => {
     }
     
     return (
-        <Center>
-            {isLoading ? (
-                <Spinner />
-                ) : (
-                    <Flex>
-                    <Flex direction="column" align="center">
-                        <Text fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Step {props.step}</Text>
-                        <Button colorScheme="orange" padding={["1.5rem", "1.5rem", "2rem", "3rem"]} fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Mint now !</Button>
+        <Flex 
+            borderColor="black" 
+            borderWidth={4} 
+            borderRadius="5rem"
+            w="100%"
+            padding="20vh"
+            bgColor="#000000b0"
+            boxShadow="0px 0px 0.6rem grey"
+        >
+            <Center>
+                {isLoading ? (
+                    <Spinner />
+                    ) : (
+                        <Flex>
+                        <Flex direction="column" align="center">
+                            <Text fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Step {props.step}</Text>
+                            <Button colorScheme="cyan" padding={["1.5rem", "1.5rem", "2rem", "3rem"]} fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Mint now !</Button>
+                        </Flex>
                     </Flex>
-                </Flex>
-            )}
-        </Center>
+                )}
+            </Center>
+        </Flex>
     )
 }
 
