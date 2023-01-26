@@ -1,4 +1,4 @@
-import {Flex} from "@chakra-ui/react";
+import {Flex, Image} from "@chakra-ui/react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
@@ -9,24 +9,11 @@ const Layout = (props) => {
                 w="100%"
                 h="100%"
                 minH="100vh"
-                //bgColor="#f0f0f055"
                 color="#f0f0f0"
                 fontFamily="Arial, sans-serif"
                 flexDir="column"
                 alignItems="stretch"
             >
-                {<Flex
-                    position="fixed"
-                    right={0}
-                    bottom={0}
-                    minH="100%"
-                    minW="100%"
-                    zIndex={-1}
-                >
-                    <video autoPlay={false} muted loop>         
-                        <source src="./BACKGROUND_SITE_NFT.mp4" type="video/mp4"/>       
-                    </video>
-                 </Flex>}
                 <Flex
                     w="100%"
                     h="100%"
@@ -36,6 +23,7 @@ const Layout = (props) => {
                     fontFamily="Arial, sans-serif"
                     flexDir="column"
                     alignItems="stretch"
+                    //backgroundImage="/BACKGROUND_SITE_NFT.png"
                 >
                     <Header/>
                     <Flex 

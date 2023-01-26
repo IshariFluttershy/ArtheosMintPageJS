@@ -102,7 +102,7 @@ export default function Home() {
               borderColor="black" 
               borderWidth={4} 
               borderRadius="5rem"
-              //w="100%"
+              //w="100%" 
               padding="2vh"
               bgColor="#000000b0"
               boxShadow="0px 0px 0.6rem grey"
@@ -114,34 +114,58 @@ export default function Home() {
             </Flex>
         )}
       </Flex>
-      <Flex direction="column" w="80%">
-        <Flex justify="right">
+      <Flex direction="column" w="100%">
+        <Flex justify={["center", "center", "left", "left"]}>
           <SaleStep 
             startTimestamp={1678143604}
-            step="1"  
+            step="1" 
+            align="left" 
           />
         </Flex>
-        <Flex justify="left">
+        <Flex justify={["center", "center", "right", "right"]}>
 
         <SaleStep 
           startTimestamp={1680818404}
           step="2"  
+          align="right" 
         />
         </Flex>
-        <Flex justify="right">
+        <Flex justify={["center", "center", "left", "left"]}>
           <SaleStep 
             startTimestamp={1683410404}
             step="3"  
+            align="left" 
           />
         </Flex>
-        <Flex justify="left">
+        <Flex justify={["center", "center", "right", "right"]}>
           <SaleStep 
             startTimestamp={1686088804}
             step="4"  
+            align="right" 
+          />
+        </Flex>
+        <Flex justify={["center", "center", "left", "left"]}>
+          <SaleStep 
+            startTimestamp={1686088804}
+            step="5"  
+            align="left" 
+          />
+        </Flex>
+        <Flex justify={["center", "center", "right", "right"]}>
+          <SaleStep 
+            startTimestamp={1686088804}
+            step="6" 
+            align="right" 
+          />
+        </Flex>
+        <Flex justify={["center", "center", "left", "left"]}>
+          <SaleStep 
+            startTimestamp={1686088804}
+            step="7"  
+            align="left" 
           />
         </Flex>
       </Flex>
     </Layout>
   )
 }
-

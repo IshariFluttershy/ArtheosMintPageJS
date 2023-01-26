@@ -1,5 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Image, Button, Flex, Spinner, useToast, chakra, Text } from "@chakra-ui/react";
+
+const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
+  
+    const updateTarget = useCallback((e) => {
+      if (e.matches) {
+        setTargetReached(true);
+      } else {
+        setTargetReached(false);
+      }
+    }, []);
+  
+    useEffect(() => {
+      const media = window.matchMedia(`(max-width: ${width}px)`);
+      media.addListener(updateTarget);
+  
+      // Check on mount (callback is not called until a change occurs)
+      if (media.matches) {
+        setTargetReached(true);
+      }
+  
+      return () => media.removeListener(updateTarget);
+    }, []);
+  
+    return targetReached;
+};
 
 const SaleStep = (props) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -14,6 +40,7 @@ const SaleStep = (props) => {
     useEffect(() => {
         getCount()
     }, [])
+
 
 
     const getCount = () => {
@@ -39,6 +66,8 @@ const SaleStep = (props) => {
             setIsLoading(false);
         }, 1000);
     }
+
+    const isBreakpoint = useMediaQuery(768);
     
     return (
         <Flex 
@@ -49,13 +78,25 @@ const SaleStep = (props) => {
             padding="2vh"
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
-            margin="1vh"
+            margin="8vh"
         >
             {isLoading ? (
                 <Spinner />
                 ) : (
-                    <Flex>
-                    <Flex direction="column" align="center">
+                <Flex direction={["column", "column", "row", "row"]}>
+                    {props.align !== "right" || isBreakpoint ? (
+                        <Flex direction="column" align="center" justify="center">
+                            <Image
+                                src="/TestLegendaryNFT.png"
+                                quality={100}
+                                borderRadius="5rem"
+                                width={["5rem", "7rem", "15rem", "20rem"]}
+                                height={["5rem", "7rem", "15rem", "20rem"]}
+                                marginBottom={["1rem", "1rem", "0rem", "0rem"]}
+                            />
+                        </Flex>
+                    ) : (<></>)}
+                    <Flex direction="column" align="center" justify="center">
                         <Text fontSize={["0.75rem", "0.75rem", "1rem", "1.5rem"]}>Step {props.step}</Text>
                         <Text fontSize={["0.75rem", "0.75rem", "1rem", "1.5rem"]}>Whitelist Sale starts in</Text>
                         <Flex align="center" justify="center" p="2rem">
@@ -77,6 +118,18 @@ const SaleStep = (props) => {
                             </Flex>
                         </Flex>
                     </Flex>
+                    {props.align === "right" && !isBreakpoint ? (
+                        <Flex direction="column" align="center" justify="center">
+                            <Image
+                                src="/TestLegendaryNFT.png"
+                                quality={100}
+                                borderRadius="5rem"
+                                width={["5rem", "7rem", "15rem", "20rem"]}
+                                height={["5rem", "7rem", "15rem", "20rem"]}
+                                marginBottom={["1rem", "1rem", "0rem", "0rem"]}
+                            />
+                        </Flex>
+                    ) : (<></>)}
                 </Flex>
             )}
         </Flex>
