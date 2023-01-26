@@ -25,6 +25,21 @@ const Layout = (props) => {
                     alignItems="stretch"
                     //backgroundImage="/BACKGROUND_SITE_NFT.png"
                 >
+                    {
+                        <Image
+                            align="center"
+                            justify="center"
+                            w="100%" 
+                            h="100%"
+                            zIndex="-1" 
+                            position="fixed" 
+                            flex={1}
+                            src="/background.jpg"
+                            layout="fill"
+                            objectFit="cover" 
+                            quality={100}
+                        />
+                    }
                     <Header/>
                     <Flex 
                         align="center"

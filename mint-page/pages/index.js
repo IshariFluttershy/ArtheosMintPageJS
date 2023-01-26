@@ -146,21 +146,21 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}>
           <SaleStep 
-            startTimestamp={1686088804}
+            startTimestamp={1688680800}
             step="5"  
             align="left" 
           />
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}>
           <SaleStep 
-            startTimestamp={1686088804}
+            startTimestamp={1691359200}
             step="6" 
             align="right" 
           />
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}>
           <SaleStep 
-            startTimestamp={1686088804}
+            startTimestamp={1694037600}
             step="7"  
             align="left" 
           />

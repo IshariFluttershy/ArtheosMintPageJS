@@ -46,7 +46,7 @@ const CurrentSaleStep = (props) => {
             borderWidth={4} 
             borderRadius="5rem"
             w="100%"
-            padding="20vh"
+            padding="5rem"
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
         >
