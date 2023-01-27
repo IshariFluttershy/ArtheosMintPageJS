@@ -87,7 +87,7 @@ const SaleStep = (props) => {
                     {props.align !== "right" || isBreakpoint ? (
                         <Flex direction="column" align="center" justify="center">
                             <Image
-                                src="/TestLegendaryNFT.png"
+                                src={props.imgSource}
                                 quality={100}
                                 borderRadius="5rem"
                                 width={["5rem", "7rem", "15rem", "20rem"]}
@@ -121,7 +121,7 @@ const SaleStep = (props) => {
                     {props.align === "right" && !isBreakpoint ? (
                         <Flex direction="column" align="center" justify="center">
                             <Image
-                                src="/TestLegendaryNFT.png"
+                                src={props.imgSource}
                                 quality={100}
                                 borderRadius="5rem"
                                 width={["5rem", "7rem", "15rem", "20rem"]}
