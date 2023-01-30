@@ -120,7 +120,7 @@ export default function Home() {
             startTimestamp={1678143604}
             step="1" 
             align="left" 
-            imgSource="Capsule_Paresse.png"
+            imgSource="Capsule_Paresse"
           />
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}>
@@ -129,7 +129,7 @@ export default function Home() {
           startTimestamp={1680818404}
           step="2"  
           align="right" 
-          imgSource="Capsule_Colere.png"
+          imgSource="Capsule_Colere"
         />
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}>
@@ -137,7 +137,7 @@ export default function Home() {
             startTimestamp={1683410404}
             step="3"  
             align="left" 
-            imgSource="Capsule_Luxure.png"
+            imgSource="Capsule_Luxure"
 
           />
         </Flex>
@@ -146,7 +146,7 @@ export default function Home() {
             startTimestamp={1686088804}
             step="4"  
             align="right" 
-            imgSource="Capsule_Gourmandise.png"
+            imgSource="Capsule_Gourmandise"
 
           />
         </Flex>
@@ -155,7 +155,7 @@ export default function Home() {
             startTimestamp={1688680800}
             step="5"  
             align="left" 
-            imgSource="Capsule_Envie.png"
+            imgSource="Capsule_Envie"
 
           />
         </Flex>
@@ -164,7 +164,7 @@ export default function Home() {
             startTimestamp={1691359200}
             step="6" 
             align="right" 
-            imgSource="Capsule_Orgueil.png"
+            imgSource="Capsule_Orgueil"
 
           />
         </Flex>
@@ -173,7 +173,7 @@ export default function Home() {
             startTimestamp={1694037600}
             step="7"  
             align="left" 
-            imgSource="Capsule_Avarice.png"
+            imgSource="Capsule_Avarice"
 
           />
         </Flex>

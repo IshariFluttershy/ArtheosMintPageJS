@@ -36,6 +36,13 @@ const SaleStep = (props) => {
     const [days, setDays] = useState(null);
     const [timestamp, setTimestamp] = useState(Math.floor(Date.now() / 1000));
 
+    let imageSource = props.imgSource;
+
+    if (isAvaliable) {
+        imageSource += "_Colored";
+    }
+    imageSource += ".png";
+
     const saleStartTime = props.startTimestamp;
 
     useEffect(() => {
@@ -94,7 +101,7 @@ const SaleStep = (props) => {
                     {props.align !== "right" || isBreakpoint ? (
                         <Flex direction="column" align="center" justify="center">
                             <Image
-                                src={props.imgSource}
+                                src={imageSource}
                                 quality={100}
                                 borderRadius="5rem"
                                 width={["5rem", "7rem", "15rem", "20rem"]}
@@ -139,7 +146,7 @@ const SaleStep = (props) => {
                     {props.align === "right" && !isBreakpoint ? (
                         <Flex direction="column" align="center" justify="center">
                             <Image
-                                src={props.imgSource}
+                                src={imageSource}
                                 quality={100}
                                 borderRadius="5rem"
                                 width={["5rem", "7rem", "15rem", "20rem"]}
