@@ -57,7 +57,14 @@ const CurrentSaleStep = (props) => {
                         <Flex>
                         <Flex direction="column" align="center">
                             <Text fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Step {props.step}</Text>
-                            <Button colorScheme="cyan" padding={["1.5rem", "1.5rem", "2rem", "3rem"]} fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Mint now !</Button>
+                            <Button 
+                                colorScheme="cyan" 
+                                padding={["1.5rem", "1.5rem", "2rem", "3rem"]} 
+                                fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}
+                                margin={["1.5rem", "1.5rem", "2rem", "3rem"]}
+                            >
+                                Mint now !
+                            </Button>
                         </Flex>
                     </Flex>
                 )}

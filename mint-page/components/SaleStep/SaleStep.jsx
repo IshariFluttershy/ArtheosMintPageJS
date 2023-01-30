@@ -90,7 +90,9 @@ const SaleStep = (props) => {
                         {isAvaliable ? (
                             <Button
                                 colorScheme="cyan"
-                                fontSize={15}
+                                fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}
+                                padding={["1.5rem", "1.5rem", "2rem", "3rem"]}
+                                margin={["1.5rem", "1.5rem", "2rem", "3rem"]}
                             >
                                 Mint now !
                             </Button>

@@ -109,7 +109,7 @@ export default function Home() {
               boxShadow="0px 0px 0.6rem grey"
               margin="1vh"
               position="absolute"
-              top="950px"
+              top="1120px"
             >
               <Text fontSize={30}>
                 Please connect your wallet
