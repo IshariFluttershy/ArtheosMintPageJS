@@ -89,8 +89,10 @@ export default function Home() {
                   flexDir="column"
                   my="md"
                   px={["sm", "sm", "lg", "lg"]}
-                  p="2rem"
-                >
+                  p="2rem"    
+                  position="absolute"
+                  top="950px"         
+                  >
                   <CurrentSaleStep
                     step="1"
                   />
@@ -102,11 +104,12 @@ export default function Home() {
               borderColor="black" 
               borderWidth={4} 
               borderRadius="5rem"
-              //w="100%" 
               padding="2vh"
               bgColor="#000000b0"
               boxShadow="0px 0px 0.6rem grey"
               margin="1vh"
+              position="absolute"
+              top="950px"
             >
               <Text fontSize={30}>
                 Please connect your wallet
@@ -115,7 +118,10 @@ export default function Home() {
         )}
       </Flex>
       <Flex direction="column" w="100%">
-        <Flex justify={["center", "center", "left", "left"]}>
+        <Flex justify={["center", "center", "left", "left"]}
+          position="absolute"
+          top="3550px"
+        >
           <SaleStep 
             startTimestamp={1678143604}
             step="1" 
@@ -123,7 +129,11 @@ export default function Home() {
             imgSource="Capsule_Paresse"
           />
         </Flex>
-        <Flex justify={["center", "center", "right", "right"]}>
+        <Flex justify={["center", "center", "right", "right"]}
+          position="absolute"
+          right="0%"
+          top="4200px"
+        >
 
         <SaleStep 
           startTimestamp={1680818404}
@@ -132,7 +142,10 @@ export default function Home() {
           imgSource="Capsule_Colere"
         />
         </Flex>
-        <Flex justify={["center", "center", "left", "left"]}>
+        <Flex justify={["center", "center", "left", "left"]}
+          position="absolute"
+          top="4900px"
+        >
           <SaleStep 
             startTimestamp={1683410404}
             step="3"  
@@ -141,7 +154,11 @@ export default function Home() {
 
           />
         </Flex>
-        <Flex justify={["center", "center", "right", "right"]}>
+        <Flex justify={["center", "center", "right", "right"]}
+          position="absolute"
+          right="0%"
+          top="5480px"
+        >
           <SaleStep 
             startTimestamp={1686088804}
             step="4"  
@@ -150,7 +167,10 @@ export default function Home() {
 
           />
         </Flex>
-        <Flex justify={["center", "center", "left", "left"]}>
+        <Flex justify={["center", "center", "left", "left"]}
+          position="absolute"
+          top="6050px"
+        >
           <SaleStep 
             startTimestamp={1688680800}
             step="5"  
@@ -159,7 +179,11 @@ export default function Home() {
 
           />
         </Flex>
-        <Flex justify={["center", "center", "right", "right"]}>
+        <Flex justify={["center", "center", "right", "right"]}
+          position="absolute"
+          right="0%"
+          top="6750px"
+        >
           <SaleStep 
             startTimestamp={1691359200}
             step="6" 
@@ -168,7 +192,10 @@ export default function Home() {
 
           />
         </Flex>
-        <Flex justify={["center", "center", "left", "left"]}>
+        <Flex justify={["center", "center", "left", "left"]}
+          position="absolute"
+          top="7380px"
+        >
           <SaleStep 
             startTimestamp={1694037600}
             step="7"  
