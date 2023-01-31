@@ -56,25 +56,43 @@ const SaleStep = (props) => {
         }, 1000);
     }
 
-    const isBreakpoint = useMediaQuery(768);
+    const isBreakpoint = useMediaQuery(1279);
     
     return (
         <Flex 
             borderColor="black" 
             borderWidth={4} 
             borderRadius="5rem"
-            w="60%"
-            //padding="2vh"
+            w={["100%", "100%", "100%", "100%", "60%", "60%"]}
+            padding={["2vh", "2vh", "2vh", "2vh", "null", "null"]}
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
-            //margin="8vh"
+            margin={["8vh", "8vh", "8vh", "8vh", "null", "null"]}
+            id="hey"
         >
             {isLoading ? (
                 <Spinner />
                 ) : (
-                <Flex direction={["column", "column", "row", "row"]}>
-                    {props.align !== "right" || isBreakpoint ? (
-                        //<Flex direction="column" align="center" justify="center">
+                <Flex direction={["column", "column", "column", "column", "row", "row"]}>
+                    {isBreakpoint ? (
+                        <Flex
+                            align="center"
+                            justify="center"
+                        >
+                            <Image
+                                src={imageSource}
+                                quality={100}
+                                borderRadius="5rem"
+                                //width={["40%", "40%", "40%", "40%"]}
+                                //height={["80%", "80%", "80%", "100%"]}
+                                width={["13rem", "17rem", "25rem", "30rem", "40%", "40%"]}
+                                height={["13rem", "17rem", "25rem", "30rem", "100%", "100%"]}
+                                marginBottom={["1rem", "1rem", "0rem", "0rem"]}
+                                objectFit="contain"
+                                align="center" justify="center"
+                            />
+                        </Flex>
+                    ) : props.align !== "right" ? (
                             <Image
                                 src={imageSource}
                                 quality={100}
@@ -84,37 +102,36 @@ const SaleStep = (props) => {
                                 marginBottom={["2%", "2%", "0%", "0%"]}
                                 objectFit="contain"
                             />
-                        //</Flex>
                     ) : (<></>)}
-                    <Flex direction="column" align="center" justify="center" width={["60%", "60%", "60%", "60%"]}>
-                        <Text fontSize={["0.75rem", "0.75rem", "1rem", "1.5rem"]}>Step {props.step}</Text>
+                    <Flex direction="column" align="center" justify="center" width={["null", "null", "null", "null", "60%", "60%"]}>
+                        <Text fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem"]}>Step {props.step}</Text>
                         {isAvaliable ? (
                             <Button
                                 colorScheme="cyan"
-                                fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}
-                                padding={["1.5rem", "1.5rem", "2rem", "3rem"]}
-                                margin={["1.5rem", "1.5rem", "2rem", "3rem"]}
+                                fontSize={["2.5rem", "2.5rem", "3rem", "4rem"]}
+                                padding={["2.5rem", "2.5rem", "3rem", "4rem"]}
+                                margin={["1.5rem", "2.5rem", "3rem", "4rem"]}
                             >
                                 Mint now !
                             </Button>
                         ) : (
                         <>
-                            <Text fontSize={["0.75rem", "0.75rem", "1rem", "1.5rem"]}>Whitelist Sale starts in</Text>
+                            <Text fontSize={["1.75rem", "1.75rem", "2rem", "2.5rem"]}>Whitelist Sale starts in</Text>
                             <Flex align="center" justify="center" p="2rem">
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["1rem", "1rem", "2.5rem", "2.5rem"]}>{days}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem"]}>{days}</Text>
                                     <Text fontStyle="italic">Days</Text>
                                 </Flex>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["1rem", "1rem", "2.5rem", "2.5rem"]}>{hours}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem"]}>{hours}</Text>
                                     <Text fontStyle="italic">Hours</Text>
                                 </Flex>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["1rem", "1rem", "2.5rem", "2.5rem"]}>{minutes}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem"]}>{minutes}</Text>
                                     <Text fontStyle="italic">Mins</Text>
                                 </Flex>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["1rem", "1rem", "2.5rem", "2.5rem"]}>{seconds}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem"]}>{seconds}</Text>
                                     <Text fontStyle="italic">Secs</Text>
                                 </Flex>
                             </Flex>

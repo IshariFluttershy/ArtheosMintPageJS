@@ -52,13 +52,14 @@ const Header = () => {
     return (
         <Flex
             align="center"
-            flexDir={["column", "column", "row", "row"]}
+            flexDir={["column", "column","column","column", "row", "row"]}
             my="md"
             px={["sm", "sm", "lg", "lg"]}
             p="2rem"
-            position="absolute"
+            position={["null", "null", "null", "null", "absolute", "absolute"]}
             top={0}
             w="100%"
+            h="100%"
         >
             <Text
                 fontSize="2rem"
@@ -71,7 +72,7 @@ const Header = () => {
                 align="center"
                 justify="flex-end"
                 flex={1}
-                position="absolute"
+                position={["null", "null", "null", "null", "absolute", "absolute"]}
                 right="2%"
             >
                 {isLoading ? (

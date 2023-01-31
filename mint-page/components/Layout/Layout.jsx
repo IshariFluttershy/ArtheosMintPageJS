@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import { useMediaQuery } from "../../utils/useMediaQuery";
 
 const Layout = (props) => {
-    const isBreakpoint = useMediaQuery(768);
+    const isBreakpoint = useMediaQuery(1279);
 
     let backgroundImageSource = "/PC_background.png";
 
@@ -22,12 +22,9 @@ const Layout = (props) => {
                 fontFamily="Arial, sans-serif"
                 flexDir="column"
                 alignItems="stretch"
+                id="layout"
             >
                 {!isBreakpoint ? (
-                    <Flex 
-                    w="100%"
-                h="100%"                        
-                    >
                     <Image
                         id="backgroundimage"
                         align="center"
@@ -35,26 +32,13 @@ const Layout = (props) => {
                         w="-moz-fit-content"
                         h="-moz-fit-content"
                         zIndex="-1" 
-                        //position="absolute" 
                         flex={1}
                         src={backgroundImageSource}
                         objectFit="contain" 
                         quality={100}
                         >
                     </Image>
-                    <Header/>
-                    <Flex 
-                        align="center"
-                        justify="center"
-                        flexDir="column"
-                        flex={1}
-                        w="90%"
-                        h="100%"
-                        >
-                        {props.children}
-                    </Flex>
-                    <Footer/>
-                    </Flex>
+
                 ) : (
                     <Image
                         align="center"
@@ -70,7 +54,18 @@ const Layout = (props) => {
                         quality={100}
                     />
                 )}
-
+                    <Header/>
+                    <Flex 
+                        align="center"
+                        justify="center"
+                        flexDir="column"
+                        flex={1}
+                        w={["100%", "100%", "100%", "100%", "90%", "90%"]}
+                        h="100%"
+                        >
+                        {props.children}
+                    </Flex>
+                    <Footer/>
             </Flex>
         </>
     )

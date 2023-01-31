@@ -87,11 +87,11 @@ export default function Home() {
                 return <Flex
                   align="center"
                   flexDir="column"
-                  //my="md"
-                  //px={["sm", "sm", "lg", "lg"]}
-                  //p="2rem"    
-                  position="absolute"
-                  top="10%"  
+                  my={["md", "md", "md", "md", "null", "null"]}
+                  px={["sm", "sm", "lg", "lg", "null"]}
+                  p={["2rem", "2rem", "2rem", "2rem", "null"]}   
+                  position={["null", "null", "null", "null", "absolute", "absolute"]}
+                  top={["null", "null","null","null","10%","10%"]}
                   left={["null", "null","null","null","28%","35%"]}
                   >
                   <CurrentSaleStep
@@ -105,12 +105,12 @@ export default function Home() {
               borderColor="black" 
               borderWidth={4} 
               borderRadius="5rem"
-              //padding="2vh"
+              padding={["2vh", "2vh","2vh","2vh","null","null"]}
               bgColor="#000000b0"
               boxShadow="0px 0px 0.6rem grey"
-              //margin="1vh"
-              position="absolute"
-              top="12.6%"  
+              margin={["1vh", "1vh","1vh","1vh","null","null"]}
+              position={["null", "null", "null", "null", "absolute", "absolute"]}
+              top={["null", "null","null","null","12.6%","12.6%"]}  
               left={["null", "null","null","null","36%","41%"]}
             >
               <Text fontSize={30}>
@@ -119,11 +119,16 @@ export default function Home() {
             </Flex>
         )}
       </Flex>
-      <Flex direction="column">
-        <Flex justify={["center", "center", "left", "left"]}
-          position="absolute"
+      <Flex 
+        direction="column"
+        align="center" justify="center" h="100%" w="100%"
+      >
+        <Flex justify={["center", "center", "center","center","left", "left"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
           top={["null", "null", "null", "null", "39%", "40.1%"]}
-          left="7%"
+          left={["null", "null", "null", "null", "7%"]}
+
+          margin="0"
         >
           <SaleStep 
             startTimestamp={1678143604}
@@ -132,9 +137,9 @@ export default function Home() {
             imgSource="Capsule_Paresse"
           />
         </Flex>
-        <Flex justify={["center", "center", "right", "right"]}
-          position="absolute"
-          right="7%"
+        <Flex justify={["center", "center", "center","center","right", "right"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
+          right={["null", "null", "null", "null", "7%"]}
           top={["null", "null", "null", "null", "46.4%", "47.5%"]}
         >
           <SaleStep 
@@ -144,11 +149,11 @@ export default function Home() {
             imgSource="Capsule_Colere"
           />
         </Flex>
-        <Flex justify={["center", "center", "left", "left"]}
-          position="absolute"
+        <Flex justify={["center", "center", "center","center","left", "left"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
           top={["null", "null", "null", "null", "53.7%", "54.8%"]}
 
-          left="7%"
+          left={["null", "null", "null", "null", "7%"]}
         >
           <SaleStep 
             startTimestamp={1683410404}
@@ -157,9 +162,9 @@ export default function Home() {
             imgSource="Capsule_Luxure"
           />
         </Flex>
-        <Flex justify={["center", "center", "right", "right"]}
-          position="absolute"
-          right="7%"
+        <Flex justify={["center", "center", "center","center","right", "right"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
+          right={["null", "null", "null", "null", "7%"]}
           top={["null", "null", "null", "null", "60.2%", "61.3%"]}
         >
           <SaleStep 
@@ -169,10 +174,10 @@ export default function Home() {
             imgSource="Capsule_Gourmandise"
           />
         </Flex>
-        <Flex justify={["center", "center", "left", "left"]}
-          position="absolute"
+        <Flex justify={["center", "center", "center","center","left", "left"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
           top={["null", "null", "null", "null", "66.9%", "68%"]}
-          left="7%"
+          left={["null", "null", "null", "null", "7%"]}
         >
           <SaleStep 
             startTimestamp={1688680800}
@@ -181,9 +186,9 @@ export default function Home() {
             imgSource="Capsule_Envie"
           />
         </Flex>
-        <Flex justify={["center", "center", "right", "right"]}
-          position="absolute"
-          right="7%"
+        <Flex justify={["center", "center", "center","center","right", "right"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
+          right={["null", "null", "null", "null", "7%"]}
           top={["null", "null", "null", "null", "74.2%", "75.3%"]}
         >
           <SaleStep 
@@ -193,11 +198,11 @@ export default function Home() {
             imgSource="Capsule_Orgueil"
           />
         </Flex>
-        <Flex justify={["center", "center", "left", "left"]}
-          position={["relative", "relative", "absolute", "absolute"]}
+        <Flex justify={["center", "center", "center","center","left", "left"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
           top={["null", "null", "null", "null", "81.2%", "82.3%"]}
 
-          left="7%"
+          left={["null", "null", "null", "null", "7%"]}
         >
           <SaleStep 
             startTimestamp={1694037600}

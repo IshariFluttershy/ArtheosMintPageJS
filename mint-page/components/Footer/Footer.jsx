@@ -7,7 +7,7 @@ const Footer = () => {
             justify="center" 
             my="sm" 
             p="2rem" 
-            position="absolute"
+            position={["null", "null", "null", "null", "absolute", "absolute"]}
             bottom="0.2%" 
             left={["null", "null", "null", "null", "35%", "41%"]}
         >
