@@ -58,8 +58,6 @@ const Header = () => {
             p="2rem"
             position={["null", "null", "null", "null", "absolute", "absolute"]}
             top={0}
-            w="100%"
-            h="100%"
         >
             <Text
                 fontSize="2rem"

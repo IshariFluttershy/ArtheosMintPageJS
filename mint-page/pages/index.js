@@ -108,10 +108,12 @@ export default function Home() {
               padding={["2vh", "2vh","2vh","2vh","null","null"]}
               bgColor="#000000b0"
               boxShadow="0px 0px 0.6rem grey"
-              margin={["1vh", "1vh","1vh","1vh","null","null"]}
+              //margin={["20vh", "20vh","20vh","20vh","null","null"]}
+              marginY={["30vh", "30vh","30vh","30vh","null","null"]}
               position={["null", "null", "null", "null", "absolute", "absolute"]}
               top={["null", "null","null","null","12.6%","12.6%"]}  
               left={["null", "null","null","null","36%","41%"]}
+
             >
               <Text fontSize={30}>
                 Please connect your wallet

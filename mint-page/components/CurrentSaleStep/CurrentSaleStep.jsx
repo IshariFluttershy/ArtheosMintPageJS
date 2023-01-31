@@ -45,9 +45,11 @@ const CurrentSaleStep = (props) => {
             borderColor="black" 
             borderWidth={4} 
             borderRadius="5rem"
-            padding="5rem"
+            padding={["2rem", "2.5rem", "3.5rem", "4.5rem"]}
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
+            marginBottom="20vh"
+            marginTop="20vh"
         >
             <Center>
                 {isLoading ? (
@@ -55,12 +57,12 @@ const CurrentSaleStep = (props) => {
                     ) : (
                         <Flex>
                         <Flex direction="column" align="center">
-                            <Text fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}>Step {props.step}</Text>
+                            <Text fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem"]}>Step {props.step}</Text>
                             <Button 
                                 colorScheme="cyan" 
-                                padding={["1.5rem", "1.5rem", "2rem", "3rem"]} 
-                                fontSize={["1.5rem", "1.5rem", "2rem", "3rem"]}
-                                margin={["1.5rem", "1.5rem", "2rem", "3rem"]}
+                                fontSize={["2.5rem", "2.5rem", "3rem", "4rem"]}
+                                padding={["2.5rem", "2.5rem", "3rem", "4rem"]}
+                                margin={["1.5rem", "2.5rem", "3rem", "4rem"]}
                             >
                                 Mint now !
                             </Button>
