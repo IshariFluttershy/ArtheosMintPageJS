@@ -92,7 +92,7 @@ export default function Home() {
                   //p="2rem"    
                   position="absolute"
                   top="10%"  
-                  left="35%"       
+                  left={["null", "null","null","null","28%","35%"]}
                   >
                   <CurrentSaleStep
                     step="1"
@@ -111,7 +111,7 @@ export default function Home() {
               //margin="1vh"
               position="absolute"
               top="12.6%"  
-              left="41%" 
+              left={["null", "null","null","null","36%","41%"]}
             >
               <Text fontSize={30}>
                 Please connect your wallet
@@ -122,8 +122,8 @@ export default function Home() {
       <Flex direction="column">
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="40.3%"
-          left="5%"
+          top={["null", "null", "null", "null", "39%", "40.1%"]}
+          left="7%"
         >
           <SaleStep 
             startTimestamp={1678143604}
@@ -134,8 +134,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}
           position="absolute"
-          right="5%"
-          top="47.5%"
+          right="7%"
+          top={["null", "null", "null", "null", "46.4%", "47.5%"]}
         >
           <SaleStep 
             startTimestamp={1680818404}
@@ -146,8 +146,9 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="54.8%"
-          left="5%"
+          top={["null", "null", "null", "null", "53.7%", "54.8%"]}
+
+          left="7%"
         >
           <SaleStep 
             startTimestamp={1683410404}
@@ -158,8 +159,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}
           position="absolute"
-          right="5%"
-          top="61.3%"
+          right="7%"
+          top={["null", "null", "null", "null", "60.2%", "61.3%"]}
         >
           <SaleStep 
             startTimestamp={1686088804}
@@ -170,8 +171,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="68%"
-          left="5%"
+          top={["null", "null", "null", "null", "66.9%", "68%"]}
+          left="7%"
         >
           <SaleStep 
             startTimestamp={1688680800}
@@ -182,8 +183,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}
           position="absolute"
-          right="5%"
-          top="75.3%"
+          right="7%"
+          top={["null", "null", "null", "null", "74.2%", "75.3%"]}
         >
           <SaleStep 
             startTimestamp={1691359200}
@@ -193,9 +194,10 @@ export default function Home() {
           />
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}
-          position="absolute"
-          top="82.3%"
-          left="5%"
+          position={["relative", "relative", "absolute", "absolute"]}
+          top={["null", "null", "null", "null", "81.2%", "82.3%"]}
+
+          left="7%"
         >
           <SaleStep 
             startTimestamp={1694037600}

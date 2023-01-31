@@ -63,7 +63,7 @@ const SaleStep = (props) => {
             borderColor="black" 
             borderWidth={4} 
             borderRadius="5rem"
-            //w="100%"
+            w="60%"
             //padding="2vh"
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
@@ -74,18 +74,19 @@ const SaleStep = (props) => {
                 ) : (
                 <Flex direction={["column", "column", "row", "row"]}>
                     {props.align !== "right" || isBreakpoint ? (
-                        <Flex direction="column" align="center" justify="center">
+                        //<Flex direction="column" align="center" justify="center">
                             <Image
                                 src={imageSource}
                                 quality={100}
                                 borderRadius="5rem"
-                                width={["5rem", "7rem", "15rem", "20rem"]}
-                                height={["5rem", "7rem", "15rem", "20rem"]}
-                                marginBottom={["1rem", "1rem", "0rem", "0rem"]}
+                                width={["40%", "40%", "40%", "40%"]}
+                                height={["80%", "80%", "80%", "100%"]}
+                                marginBottom={["2%", "2%", "0%", "0%"]}
+                                objectFit="contain"
                             />
-                        </Flex>
+                        //</Flex>
                     ) : (<></>)}
-                    <Flex direction="column" align="center" justify="center">
+                    <Flex direction="column" align="center" justify="center" width={["60%", "60%", "60%", "60%"]}>
                         <Text fontSize={["0.75rem", "0.75rem", "1rem", "1.5rem"]}>Step {props.step}</Text>
                         {isAvaliable ? (
                             <Button
@@ -121,16 +122,15 @@ const SaleStep = (props) => {
                         )}
                     </Flex>
                     {props.align === "right" && !isBreakpoint ? (
-                        <Flex direction="column" align="center" justify="center">
                             <Image
                                 src={imageSource}
                                 quality={100}
                                 borderRadius="5rem"
-                                width={["5rem", "7rem", "15rem", "20rem"]}
-                                height={["5rem", "7rem", "15rem", "20rem"]}
-                                marginBottom={["1rem", "1rem", "0rem", "0rem"]}
+                                width={["40%", "40%", "40%", "40%"]}
+                                height={["80%", "80%", "80%", "100%"]}
+                                marginBottom={["2%", "2%", "0%", "0%"]}
+                                objectFit="contain"
                             />
-                        </Flex>
                     ) : (<></>)}
                 </Flex>
             )}
