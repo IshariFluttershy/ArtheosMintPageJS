@@ -18,26 +18,43 @@ const Layout = (props) => {
             <Flex
                 w="100%"
                 h="100%"
-                minH="100vh"
                 color="#f0f0f0"
                 fontFamily="Arial, sans-serif"
                 flexDir="column"
                 alignItems="stretch"
-                //bgColor="#00000055"
             >
                 {!isBreakpoint ? (
+                    <Flex 
+                    w="100%"
+                h="100%"                        
+                    >
                     <Image
+                        id="backgroundimage"
                         align="center"
                         justify="center"
                         w="-moz-fit-content"
                         h="-moz-fit-content"
                         zIndex="-1" 
-                        position="absolute" 
+                        //position="absolute" 
                         flex={1}
                         src={backgroundImageSource}
                         objectFit="contain" 
                         quality={100}
-                    />
+                        >
+                    </Image>
+                    <Header/>
+                    <Flex 
+                        align="center"
+                        justify="center"
+                        flexDir="column"
+                        flex={1}
+                        w="90%"
+                        h="100%"
+                        >
+                        {props.children}
+                    </Flex>
+                    <Footer/>
+                    </Flex>
                 ) : (
                     <Image
                         align="center"
@@ -53,17 +70,7 @@ const Layout = (props) => {
                         quality={100}
                     />
                 )}
-                <Header/>
-                <Flex 
-                    align="center"
-                    justify="center"
-                    flexDir="column"
-                    w="100%"
-                    flex={1}
-                >
-                    {props.children}
-                </Flex>
-                <Footer/>
+
             </Flex>
         </>
     )

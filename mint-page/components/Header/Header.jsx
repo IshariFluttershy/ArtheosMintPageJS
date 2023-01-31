@@ -56,8 +56,9 @@ const Header = () => {
             my="md"
             px={["sm", "sm", "lg", "lg"]}
             p="2rem"
-            position="sticky"
+            position="absolute"
             top={0}
+            w="100%"
         >
             <Text
                 fontSize="2rem"
@@ -70,6 +71,8 @@ const Header = () => {
                 align="center"
                 justify="flex-end"
                 flex={1}
+                position="absolute"
+                right="2%"
             >
                 {isLoading ? (
                     <Spinner/>

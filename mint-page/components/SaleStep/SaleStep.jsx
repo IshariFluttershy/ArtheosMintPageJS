@@ -64,10 +64,10 @@ const SaleStep = (props) => {
             borderWidth={4} 
             borderRadius="5rem"
             //w="100%"
-            padding="2vh"
+            //padding="2vh"
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
-            margin="8vh"
+            //margin="8vh"
         >
             {isLoading ? (
                 <Spinner />

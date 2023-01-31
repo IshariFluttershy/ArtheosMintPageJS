@@ -73,7 +73,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Flex align="center" justify="center" h="86vh">
+      <Flex align="center" justify="center" h="100%" w="90%">
         {isLoading ? (
           <Spinner/>
         ) : account ? (
@@ -87,11 +87,12 @@ export default function Home() {
                 return <Flex
                   align="center"
                   flexDir="column"
-                  my="md"
-                  px={["sm", "sm", "lg", "lg"]}
-                  p="2rem"    
+                  //my="md"
+                  //px={["sm", "sm", "lg", "lg"]}
+                  //p="2rem"    
                   position="absolute"
-                  top="950px"         
+                  top="10%"  
+                  left="35%"       
                   >
                   <CurrentSaleStep
                     step="1"
@@ -104,12 +105,13 @@ export default function Home() {
               borderColor="black" 
               borderWidth={4} 
               borderRadius="5rem"
-              padding="2vh"
+              //padding="2vh"
               bgColor="#000000b0"
               boxShadow="0px 0px 0.6rem grey"
-              margin="1vh"
+              //margin="1vh"
               position="absolute"
-              top="1120px"
+              top="12.6%"  
+              left="41%" 
             >
               <Text fontSize={30}>
                 Please connect your wallet
@@ -117,10 +119,11 @@ export default function Home() {
             </Flex>
         )}
       </Flex>
-      <Flex direction="column" w="100%">
+      <Flex direction="column">
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="3550px"
+          top="40.3%"
+          left="5%"
         >
           <SaleStep 
             startTimestamp={1678143604}
@@ -131,77 +134,74 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}
           position="absolute"
-          right="0%"
-          top="4200px"
+          right="5%"
+          top="47.5%"
         >
-
-        <SaleStep 
-          startTimestamp={1680818404}
-          step="2"  
-          align="right" 
-          imgSource="Capsule_Colere"
-        />
+          <SaleStep 
+            startTimestamp={1680818404}
+            step="2"  
+            align="right" 
+            imgSource="Capsule_Colere"
+          />
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="4900px"
+          top="54.8%"
+          left="5%"
         >
           <SaleStep 
             startTimestamp={1683410404}
             step="3"  
             align="left" 
             imgSource="Capsule_Luxure"
-
           />
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}
           position="absolute"
-          right="0%"
-          top="5480px"
+          right="5%"
+          top="61.3%"
         >
           <SaleStep 
             startTimestamp={1686088804}
             step="4"  
             align="right" 
             imgSource="Capsule_Gourmandise"
-
           />
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="6050px"
+          top="68%"
+          left="5%"
         >
           <SaleStep 
             startTimestamp={1688680800}
             step="5"  
             align="left" 
             imgSource="Capsule_Envie"
-
           />
         </Flex>
         <Flex justify={["center", "center", "right", "right"]}
           position="absolute"
-          right="0%"
-          top="6750px"
+          right="5%"
+          top="75.3%"
         >
           <SaleStep 
             startTimestamp={1691359200}
             step="6" 
             align="right" 
             imgSource="Capsule_Orgueil"
-
           />
         </Flex>
         <Flex justify={["center", "center", "left", "left"]}
           position="absolute"
-          top="7380px"
+          top="82.3%"
+          left="5%"
         >
           <SaleStep 
             startTimestamp={1694037600}
             step="7"  
             align="left" 
             imgSource="Capsule_Avarice"
-
           />
         </Flex>
       </Flex>
