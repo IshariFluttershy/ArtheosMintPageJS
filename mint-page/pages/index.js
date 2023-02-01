@@ -87,11 +87,11 @@ export default function Home() {
                 return <Flex
                   align="center"
                   flexDir="column"
-                  my={["md", "md", "md", "md", "null", "null"]}
-                  px={["sm", "sm", "lg", "lg", "null"]}
-                  p={["2rem", "2rem", "2rem", "2rem", "null"]}   
+                  my={["md", "md", "md", "md", "0", "0"]}
+                  px={["sm", "sm", "lg", "lg", "0"]}
+                  p={["2rem", "2rem", "2rem", "2rem", "0"]}   
                   position={["null", "null", "null", "null", "absolute", "absolute"]}
-                  top={["null", "null","null","null","10%","10%"]}
+                  top={["null", "null","null","null","9%","10%"]}
                   left={["null", "null","null","null","28%","35%"]}
                   >
                   <CurrentSaleStep
@@ -105,14 +105,14 @@ export default function Home() {
               borderColor="black" 
               borderWidth={4} 
               borderRadius="5rem"
-              padding={["2vh", "2vh","2vh","2vh","null","null"]}
+              padding={["2vh", "2vh","2vh","2vh","3%","3%"]}
               bgColor="#000000b0"
               boxShadow="0px 0px 0.6rem grey"
               //margin={["20vh", "20vh","20vh","20vh","null","null"]}
-              marginY={["30vh", "30vh","30vh","30vh","null","null"]}
+              marginY={["30vh", "30vh","30vh","30vh","0","0"]}
               position={["null", "null", "null", "null", "absolute", "absolute"]}
-              top={["null", "null","null","null","12.6%","12.6%"]}  
-              left={["null", "null","null","null","36%","41%"]}
+              top={["null", "null","null","null","12%","12%"]}  
+              left={["null", "null","null","null","33%","38%"]}
 
             >
               <Text fontSize={30}>
@@ -127,8 +127,8 @@ export default function Home() {
       >
         <Flex justify={["center", "center", "center","center","left", "left"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          top={["null", "null", "null", "null", "39%", "40.1%"]}
-          left={["null", "null", "null", "null", "7%"]}
+          top={["null", "null", "null", "null", "39.3%", "39.8%"]}
+          left={["null", "null", "null", "null", "5%"]}
 
           margin="0"
         >
@@ -141,8 +141,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "center","center","right", "right"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          right={["null", "null", "null", "null", "7%"]}
-          top={["null", "null", "null", "null", "46.4%", "47.5%"]}
+          right={["null", "null", "null", "null", "5%"]}
+          top={["null", "null", "null", "null", "46.4%", "47%"]}
         >
           <SaleStep 
             startTimestamp={1680818404}
@@ -153,9 +153,9 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "center","center","left", "left"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          top={["null", "null", "null", "null", "53.7%", "54.8%"]}
+          top={["null", "null", "null", "null", "54%", "54.6%"]}
 
-          left={["null", "null", "null", "null", "7%"]}
+          left={["null", "null", "null", "null", "5%"]}
         >
           <SaleStep 
             startTimestamp={1683410404}
@@ -166,8 +166,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "center","center","right", "right"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          right={["null", "null", "null", "null", "7%"]}
-          top={["null", "null", "null", "null", "60.2%", "61.3%"]}
+          right={["null", "null", "null", "null", "5%"]}
+          top={["null", "null", "null", "null", "60.5%", "61.1%"]}
         >
           <SaleStep 
             startTimestamp={1686088804}
@@ -178,8 +178,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "center","center","left", "left"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          top={["null", "null", "null", "null", "66.9%", "68%"]}
-          left={["null", "null", "null", "null", "7%"]}
+          top={["null", "null", "null", "null", "67.3%", "67.7%"]}
+          left={["null", "null", "null", "null", "5%"]}
         >
           <SaleStep 
             startTimestamp={1688680800}
@@ -190,8 +190,8 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "center","center","right", "right"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          right={["null", "null", "null", "null", "7%"]}
-          top={["null", "null", "null", "null", "74.2%", "75.3%"]}
+          right={["null", "null", "null", "null", "5%"]}
+          top={["null", "null", "null", "null", "74.3%", "74.9%"]}
         >
           <SaleStep 
             startTimestamp={1691359200}
@@ -202,9 +202,9 @@ export default function Home() {
         </Flex>
         <Flex justify={["center", "center", "center","center","left", "left"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          top={["null", "null", "null", "null", "81.2%", "82.3%"]}
+          top={["null", "null", "null", "null", "81.2%", "81.9%"]}
 
-          left={["null", "null", "null", "null", "7%"]}
+          left={["null", "null", "null", "null", "5%"]}
         >
           <SaleStep 
             startTimestamp={1694037600}

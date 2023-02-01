@@ -45,11 +45,10 @@ const CurrentSaleStep = (props) => {
             borderColor="black" 
             borderWidth={4} 
             borderRadius="5rem"
-            padding={["2rem", "2.5rem", "3.5rem", "4.5rem"]}
+            padding={["2rem", "2.5rem", "3.5rem", "4.5rem", "10%"]}
             bgColor="#000000b0"
             boxShadow="0px 0px 0.6rem grey"
-            marginBottom="20vh"
-            marginTop="20vh"
+            marginY={["20vh", "20vh", "20vh", "20vh", "0"]}
         >
             <Center>
                 {isLoading ? (
