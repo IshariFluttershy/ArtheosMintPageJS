@@ -99,12 +99,12 @@ export default function Home() {
           })()
           ) : (
             <Flex 
-              borderColor="black" 
+              borderColor="#61a6ce" 
               borderWidth={4} 
               borderRadius="5rem"
+              boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
               padding={["2vh", "2vh","2vh","2vh","3%","3%"]}
               bgColor="#000000b0"
-              boxShadow="0px 0px 0.6rem grey"
               //margin={["20vh", "20vh","20vh","20vh","null","null"]}
               marginY={["30vh", "30vh","30vh","30vh","0","0"]}
               position={["null", "null", "null", "null", "absolute", "absolute"]}
@@ -130,14 +130,13 @@ export default function Home() {
           margin="0"
         >
           <Text
-            borderColor="black" 
+            borderColor="#61a6ce" 
             borderWidth={4} 
             borderRadius="5rem"
-            outline="-5px solid black"
+            boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
             w={["100%", "100%", "100%", "100%", "70%", "70%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "3rem", "3.5rem"]}
             bgColor="#000000b0"
-            boxShadow="0px 0px 0.6rem grey"
             margin={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
             id="hey"
             fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem", "3.25rem", "4.5rem"]}

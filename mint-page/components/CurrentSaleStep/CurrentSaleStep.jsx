@@ -42,12 +42,12 @@ const CurrentSaleStep = (props) => {
     
     return (
         <Flex 
-            borderColor="black" 
+            borderColor="#61a6ce" 
             borderWidth={4} 
             borderRadius="5rem"
+            boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
             padding={["2rem", "2.5rem", "3.5rem", "4.5rem", "10%"]}
             bgColor="#000000b0"
-            boxShadow="0px 0px 0.6rem grey"
             marginY={["20vh", "20vh", "20vh", "20vh", "0"]}
         >
             <Center>
@@ -58,7 +58,14 @@ const CurrentSaleStep = (props) => {
                         <Flex direction="column" align="center">
                             <Text fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem"]}>Step {props.step}</Text>
                             <Button 
-                                colorScheme="cyan" 
+                                colorScheme="cyan"
+                                bgGradient="linear(to-b, #ffffff, #61a6ce)"
+                                _hover={{
+                                    bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                                }}
+                                _active={{
+                                    bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                                }} 
                                 fontSize={["2.5rem", "2.5rem", "3rem", "4rem"]}
                                 padding={["2.5rem", "2.5rem", "3rem", "4rem"]}
                                 margin={["1.5rem", "2.5rem", "3rem", "4rem"]}

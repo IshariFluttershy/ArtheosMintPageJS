@@ -2,6 +2,15 @@ import {Flex, Image} from "@chakra-ui/react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useMediaQuery } from "../../utils/useMediaQuery";
+import { Wendy_One, Rosarivo } from '@next/font/google'
+
+const rosarivo = Rosarivo({ 
+    weight: '400',
+    subsets: ['latin'] });
+
+const wendyOne = Wendy_One({ 
+    weight: '400',
+    subsets: ['latin'] });
 
 const Layout = (props) => {
     const isBreakpoint = useMediaQuery(1279);
@@ -15,11 +24,16 @@ const Layout = (props) => {
 
     return (
         <>
+            <style jsx global>{`
+                html {
+                font-family: ${rosarivo.style.fontFamily};
+                }
+            `}</style>
             <Flex
                 w="100%"
                 h="100%"
                 color="#f0f0f0"
-                fontFamily="Arial, sans-serif"
+                fontFamily={wendyOne.style.fontFamily + ", " + rosarivo.style.fontFamily + ", Arial, sans-serif"}
                 flexDir="column"
                 alignItems="stretch"
                 id="layout"

@@ -60,13 +60,13 @@ const SaleStep = (props) => {
     
     return (
         <Flex 
-            borderColor="black" 
+            borderColor="#61a6ce" 
             borderWidth={4} 
             borderRadius="5rem"
+            boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
             w={["100%", "100%", "100%", "100%", "60%", "60%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "0", "0"]}
             bgColor="#000000b0"
-            boxShadow="0px 0px 0.6rem grey"
             margin={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
             id="hey"
         >

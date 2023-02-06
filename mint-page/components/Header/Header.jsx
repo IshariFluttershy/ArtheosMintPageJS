@@ -97,6 +97,13 @@ const Header = () => {
                 ) : (
                     <Button
                         colorScheme="cyan"
+                        bgGradient="linear(to-b, #ffffff, #61a6ce)"
+                        _hover={{
+                            bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                        }}
+                        _active={{
+                            bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                        }}
                         onClick={() => connectWallet()}
                         fontSize={15}
                     >
