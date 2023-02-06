@@ -67,7 +67,7 @@ const SaleStep = (props) => {
             w={["100%", "100%", "100%", "100%", "60%", "60%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "0", "0"]}
             bgColor="#000000b0"
-            margin={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
+            marginY={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
             id="hey"
         >
             {isLoading ? (
@@ -103,7 +103,14 @@ const SaleStep = (props) => {
                                 objectFit="contain"
                             />
                     ) : (<></>)}
-                    <Flex direction="column" align="center" justify="center" width={["null", "null", "null", "null", "60%", "60%"]}>
+                    <Flex 
+                        direction="column" 
+                        align="center" 
+                        justify="center" 
+                        width={["null", "null", "null", "null", "60%", "60%"]}
+                        flexWrap="nowrap"
+                        flexGrow="0px"
+                    >
                         <Text fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem", "2.75rem", "3.5rem"]}>Step {props.step}</Text>
                         {isAvaliable ? (
                             <Button
@@ -124,21 +131,21 @@ const SaleStep = (props) => {
                         ) : (
                         <>
                             <Text fontSize={["1.75rem", "1.75rem", "2rem", "2.5rem", "2rem", "2.5rem"]}>Whitelist Sale starts in</Text>
-                            <Flex align="center" justify="center" p="0rem">
+                            <Flex align="center" justify="center" p="0rem" width={["3rem", "3rem", "5rem", "5rem", "3rem", "4rem"]}>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem", "1rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "3rem", "4rem"]}>{days}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "2rem", "3rem"]}>{days}</Text>
                                     <Text fontStyle="italic">Days</Text>
                                 </Flex>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem", "1rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "3rem", "4rem"]}>{hours}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "2rem", "3rem"]}>{hours}</Text>
                                     <Text fontStyle="italic">Hours</Text>
                                 </Flex>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem", "1rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "3rem", "4rem"]}>{minutes}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "2rem", "3rem"]}>{minutes}</Text>
                                     <Text fontStyle="italic">Mins</Text>
                                 </Flex>
                                 <Flex direction="column" justify="center" align="center" p={["1rem", "1rem", "2rem", "2rem", "1rem", "2rem"]}>
-                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "3rem", "4rem"]}>{seconds}</Text>
+                                    <Text fontWeight="bold" fontSize={["2rem", "2rem", "4rem", "4rem", "2rem", "3rem"]}>{seconds}</Text>
                                     <Text fontStyle="italic">Secs</Text>
                                 </Flex>
                             </Flex>
