@@ -108,6 +108,13 @@ const SaleStep = (props) => {
                         {isAvaliable ? (
                             <Button
                                 colorScheme="cyan"
+                                bgGradient="linear(to-b, #ffffff, #61a6ce)"
+                                _hover={{
+                                    bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                                }}
+                                _active={{
+                                    bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                                }}
                                 fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
                                 padding={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
                                 margin={["1.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}

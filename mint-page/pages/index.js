@@ -10,10 +10,7 @@ import SoldOut from "../components/SoldOut/SoldOut"
 import SaleStep from "../components/SaleStep/SaleStep"
 import CurrentSaleStep from "../components/CurrentSaleStep/CurrentSaleStep"
 
-
 import { ethers } from "ethers";
-
-
 
 export default function Home() {
 
@@ -125,6 +122,32 @@ export default function Home() {
         direction="column"
         align="center" justify="center" h="100%" w="100%"
       >
+        <Flex justify={["center", "center", "center","center","center", "center"]}
+          align={["center", "center", "center","center","center", "center"]}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
+          top={["null", "null", "null", "null", "25.1%", "25.1%"]}
+          left={["null", "null", "null", "null", "0%"]}
+          margin="0"
+        >
+          <Text
+            borderColor="black" 
+            borderWidth={4} 
+            borderRadius="5rem"
+            outline="-5px solid black"
+            w={["100%", "100%", "100%", "100%", "70%", "70%"]}
+            padding={["2vh", "2vh", "2vh", "2vh", "3rem", "3.5rem"]}
+            bgColor="#000000b0"
+            boxShadow="0px 0px 0.6rem grey"
+            margin={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
+            id="hey"
+            fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem", "3.25rem", "4.5rem"]}
+            justify={["center", "center", "center","center","center", "center"]}
+            align={["center", "center", "center","center","center", "center"]}
+          >
+            Délivre les Yusha, imprègne toi de leurs pouvoirs et incarne le héros qui est en toi !
+          </Text>
+        </Flex>
+
         <Flex justify={["center", "center", "center","center","left", "left"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
           top={["null", "null", "null", "null", "39.3%", "39.8%"]}
