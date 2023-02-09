@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Flex, Button, Text, useToast, Spinner, Spacer } from "@chakra-ui/react";
+import { Flex, Button, Text, useToast, Spinner, Spacer, Image} from "@chakra-ui/react";
 import Layout from "../components/Layout/Layout"
 import useEthersProvider from "../hooks/useEthersProvider";
 import Before from "../components/Before/Before"
@@ -70,7 +70,27 @@ export default function Home() {
 
   return (
     <Layout>
-      <Flex align="center" justify="center" h="100%" w="90%">
+      <Flex align="center" justify="center" h="100%" w="90%"
+              direction="column"
+              >
+        <Image
+          id="banner"
+          align="center"
+          justify="center"
+          w="-moz-fit-content"
+          h="-moz-fit-content"
+          zIndex="-1" 
+          flex={1}
+          src="./Logo.png"
+          objectFit="contain" 
+          quality={100}
+          position={["null", "null", "null", "null", "absolute", "absolute"]}
+          top={["null", "null", "null", "null", "2%", "1%"]}
+          left={["null", "null", "null", "null", "15%", "15%"]}
+          width={["null", "null", "null", "null", "70%", "70%"]}
+          marginTop={["10vh", "10vh", "10vh", "10vh", "0", "0"]}
+        >
+        </Image>
         {isLoading ? (
           <Spinner/>
         ) : account ? (
@@ -90,6 +110,7 @@ export default function Home() {
                   position={["null", "null", "null", "null", "absolute", "absolute"]}
                   top={["null", "null","null","null","9%","10%"]}
                   left={["null", "null","null","null","28%","35%"]}
+                  marginX={["2vh", "2vh","2vh","2vh","0","0"]}
                   >
                   <CurrentSaleStep
                     step="1"
@@ -103,10 +124,11 @@ export default function Home() {
               borderWidth={4} 
               borderRadius="5rem"
               boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
-              padding={["2vh", "2vh","2vh","2vh","3%","3%"]}
               bgColor="#000000b0"
+              padding={["2vh", "2vh","2vh","2vh","3%","3%"]}
               //margin={["20vh", "20vh","20vh","20vh","null","null"]}
-              marginY={["30vh", "30vh","30vh","30vh","0","0"]}
+              marginY={["20vh", "20vh","20vh","20vh","0","0"]}
+              marginX={["2vh", "2vh","2vh","2vh","0","0"]}
               position={["null", "null", "null", "null", "absolute", "absolute"]}
               top={["null", "null","null","null","12%","12%"]}  
               left={["null", "null","null","null","33%","38%"]}
@@ -137,7 +159,7 @@ export default function Home() {
             w={["100%", "100%", "100%", "100%", "70%", "70%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "3rem", "3.5rem"]}
             bgColor="#000000b0"
-            margin={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
+            margin={["2vh", "2vh", "2vh", "2vh", "0", "0"]}
             id="hey"
             fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem", "3.25rem", "4.5rem"]}
             justify={["center", "center", "center","center","center", "center"]}
