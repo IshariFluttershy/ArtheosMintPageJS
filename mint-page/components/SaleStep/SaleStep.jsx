@@ -32,7 +32,7 @@ const SaleStep = (props) => {
             let unixTime = saleStartTime * 1000;
             let date_future = new Date(unixTime);
             let date_now = new Date();
-            date_now = new Date(date_now.getTime() +120*60000000);
+            date_now = new Date(date_now.getTime() /*+120*60000000*/);
 
             if (date_now > date_future) {
                 setIsLoading(false);
@@ -60,10 +60,11 @@ const SaleStep = (props) => {
     
     return (
         <Flex 
-            borderColor="#61a6ce" 
-            borderWidth={4} 
+            borderColor="#ffffff7a" 
+            borderWidth="0.5rem" 
             borderRadius="5rem"
-            boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
+            borderStyle="double"
+            boxShadow="0px 0px 0.6rem rgba(255, 255, 255, 0.62)"
             w={["100%", "100%", "100%", "100%", "60%", "60%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "0", "0"]}
             bgColor="#000000b0"
@@ -115,12 +116,12 @@ const SaleStep = (props) => {
                         {isAvaliable ? (
                             <Button
                                 colorScheme="cyan"
-                                bgGradient="linear(to-b, #ffffff, #61a6ce)"
+                                bgGradient="linear(to-b, #ffffff00, #61a6ceff)"
                                 _hover={{
-                                    bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                                    bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
                                 }}
                                 _active={{
-                                    bgGradient: 'linear(to-b, #ffffff, #61a6ce)',
+                                    bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
                                 }}
                                 fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
                                 padding={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}

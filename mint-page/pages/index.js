@@ -148,7 +148,7 @@ export default function Home() {
           align={["center", "center", "center","center","center", "center"]}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
           top={["null", "null", "null", "null", "25.1%", "25.1%"]}
-          left={["null", "null", "null", "null", "0%"]}
+          left={["null", "null", "null", "null", "20%"]}
           margin="0"
         >
           <Text
@@ -156,7 +156,7 @@ export default function Home() {
             borderWidth={4} 
             borderRadius="5rem"
             boxShadow="0px 0px 0.6rem rgba(1, 179, 255, 0.5)"
-            w={["100%", "100%", "100%", "100%", "70%", "70%"]}
+            w={["100%", "100%", "100%", "100%", "70%", "100%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "3rem", "3.5rem"]}
             bgColor="#000000b0"
             margin={["2vh", "2vh", "2vh", "2vh", "0", "0"]}
@@ -164,8 +164,11 @@ export default function Home() {
             fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem", "3.25rem", "4.5rem"]}
             justify={["center", "center", "center","center","center", "center"]}
             align={["center", "center", "center","center","center", "center"]}
+            textAlign="center"
           >
-            Délivre les Yusha, imprègne toi de leurs pouvoirs et incarne le héros qui est en toi !
+            Délivre les Yusha <br/>
+            Imprègne toi de leurs pouvoirs<br/>
+            Incarne le héros qui est en toi !
           </Text>
         </Flex>
 
