@@ -88,7 +88,7 @@ export default function Home() {
           top={["null", "null", "null", "null", "2%", "1%"]}
           left={["null", "null", "null", "null", "15%", "15%"]}
           width={["null", "null", "null", "null", "70%", "70%"]}
-          marginTop={["10vh", "10vh", "9vh", "10vh", "0", "0"]}
+          marginTop={["10vh", "10vh", "10vh", "10vh", "0", "0"]}
         >
         </Image>
         {isLoading ? (
