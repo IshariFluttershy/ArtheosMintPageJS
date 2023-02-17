@@ -65,11 +65,13 @@ const SaleStep = (props) => {
             borderRadius="5rem"
             borderStyle="double"
             boxShadow="0px 0px 0.6rem rgba(255, 255, 255, 0.62)"
-            w={["100%", "100%", "100%", "100%", "60%", "60%"]}
+            w={["100%", "100%", "650px", "100%", "60%", "60%"]}
             padding={["2vh", "2vh", "2vh", "2vh", "0", "0"]}
             bgColor="#000000b0"
             marginY={["8vh", "8vh", "8vh", "8vh", "0", "0"]}
             id="hey"
+            direction="column" align="center"
+
         >
             {isLoading ? (
                 <Spinner />
