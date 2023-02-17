@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Flex, useToast, Text, Spinner, chakra} from "@chakra-ui/react";
+import { Button, Flex, useToast, Text, Spinner, chakra, Image} from "@chakra-ui/react";
 import { hasMetamask } from "../../utils/hasMetamask";
 import useEthersProvider from "../../hooks/useEthersProvider";
 import { ethers } from "ethers";
@@ -60,13 +60,25 @@ const Header = () => {
             top={0}
             w="100%"
         >
-            <Text
+            {/*<Text
                 fontSize="2rem"
                 fontWeight={900}
                 letterSpacing={2}
             >
                 Artheos
-            </Text>
+            </Text>*/}
+            <Image
+                src="Logo_small.jpg"
+                quality={100}
+                borderRadius="50%"
+                width={["40%", "40%", "40%", "40%", "5%"]}
+                height={["80%", "80%", "80%", "100%"]}
+                /*width={["13rem", "17rem", "25rem", "30rem", "40%", "40%"]}
+                height={["13rem", "17rem", "25rem", "30rem", "100%", "100%"]}*/
+                marginBottom={["1rem", "1rem", "0rem", "0rem"]}
+                objectFit="contain"
+                align="center" justify="center"
+            />
             <Flex
                 align="center"
                 justify="flex-end"
