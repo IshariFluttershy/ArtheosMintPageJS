@@ -85,7 +85,7 @@ export default function Home() {
           objectFit="contain" 
           quality={100}
           position={["null", "null", "null", "null", "absolute", "absolute"]}
-          top={["null", "null", "null", "null", "2%", "1%"]}
+          top={["null", "null", "null", "null", "2%", "0.5%"]}
           left={["null", "null", "null", "null", "15%", "15%"]}
           width={["null", "null", "null", "null", "70%", "70%"]}
           marginTop={["10vh", "10vh", "10vh", "10vh", "0", "0"]}
@@ -108,12 +108,13 @@ export default function Home() {
                   px={["sm", "sm", "lg", "lg", "0"]}
                   p={["2rem", "2rem", "2rem", "2rem", "0"]}   
                   position={["null", "null", "null", "null", "absolute", "absolute"]}
-                  top={["null", "null","null","null","9%","10%"]}
-                  left={["null", "null","null","null","28%","35%"]}
+                  top={["null", "null","null","null","10%","10%"]}
+                  left={["null", "null","null","null","36%","38%"]}
                   marginX={["2vh", "2vh","2vh","2vh","0","0"]}
                   >
                   <CurrentSaleStep
                     step="1"
+                    startTimestamp={1678143604}
                   />
                 </Flex>
             }
