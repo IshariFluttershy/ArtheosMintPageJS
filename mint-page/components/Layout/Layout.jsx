@@ -15,7 +15,7 @@ const wendyOne = Wendy_One({
 const Layout = (props) => {
     const isBreakpoint = useMediaQuery(1279);
 
-    let backgroundImageSource = "/PC_background.png";
+    let backgroundImageSource = "/PC_background.jpg";
 
     if (isBreakpoint) {
         backgroundImageSource = "/mobile_background.jpg";
