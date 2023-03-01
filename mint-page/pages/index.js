@@ -3,12 +3,16 @@ import { Flex, Button, Text, useToast, Spinner, Spacer, Image} from "@chakra-ui/
 import Layout from "../components/Layout/Layout"
 import useEthersProvider from "../hooks/useEthersProvider";
 import Before from "../components/Before/Before"
+import Contract from "../ArtheosYushaERC721R.json";
 import Reveal from "../components/Reveal/Reveal"
 import WhitelistSale from "../components/WhitelistSale/WhitelistSale"
 import PublicSale from "../components/PublicSale/PublicSale"
 import SoldOut from "../components/SoldOut/SoldOut"
 import SaleStep from "../components/SaleStep/SaleStep"
 import CurrentSaleStep from "../components/CurrentSaleStep/CurrentSaleStep"
+
+import { CONTRACT_ADDRESS } from "../utils/constants";
+
 
 import { ethers } from "ethers";
 
@@ -18,53 +22,56 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [sellingStep, setSellingStep] = useState(null);
   const [saleStartTime, setSaleStartTime] = useState(null);
-  const [BNWlSalePrice, setBNWlSalePrice] = useState(null);
-  const [wlSalePrice, setWlSalePrice] = useState(null);
+  const [wl1SalePrice, setWl1SalePrice] = useState(null);
+  const [BNWl2SalePrice, setBNWl2SalePrice] = useState(null);
+  const [wl2SalePrice, setWl2SalePrice] = useState(null);
+  const [BNWl3SalePrice, setBNWl3SalePrice] = useState(null);
+  const [wl3SalePrice, setWl3SalePrice] = useState(null);
+
   const [BNPublicSalePrice, setBNPublicSalePrice] = useState(null);
   const [publicSalePrice, setPublicSalePrice] = useState(null);
   const [totalSupply, setTotalSupply] = useState(null);
 
   const toast = useToast();
-  const contractAddress = "";
+  const contractAddress = CONTRACT_ADDRESS;
 
   useEffect(() => {
-    if (account) {
+    if(account) {
       getDatas();
     }
   }, [account])
 
   const getDatas = async() => {
     setIsLoading(true);
+    const contract = new ethers.Contract(contractAddress, Contract.abi, provider);
+    const sellingStep = await contract.sellingStep();
+    
+    let wl1SalePrice = 0;
 
-    /*const Contract = new ethers.Contract(contractAddress, Contract.abi, provider);
-    const sellingStep = await contractAddress.sellingStep();
+    let wl2SalePrice = await contract.wl2SalePrice();
+    let wl2SalePriceBN = ethers.BigNumber.from(wl2SalePrice._hex);
+    wl2SalePrice = ethers.utils.formatEther(wl2SalePriceBN);
 
-    let wlSalePrice = await contractAddress.wlSalePrice();
-    let wlSalePriceBN = ethers.BigNumber.from(wlSalePrice._hex);
-    wlSalePrice = ethers.utils.formatEther(wlSalePriceBN);
-
-    let publicSalePrice = await contractAddress.publicSalePrice();
+    let wl3SalePrice = await contract.wl3SalePrice();
+    let wl3SalePriceBN = ethers.BigNumber.from(wl3SalePrice._hex);
+    wl3SalePrice = ethers.utils.formatEther(wl3SalePriceBN);
+    
+    let publicSalePrice = await contract.publicSalePrice();
     let publicSalePriceBN = ethers.BigNumber.from(publicSalePrice._hex);
-    publicSalePrice = ethers.utils.formatEther(publicSalePriceBN);
-
-    let totalSupply = await contractAddress.totalSupply();
+    publicSalePrice = ethers.utils.formatEther(publicSalePriceBN)
+    
+    let totalSupply = await contract.totalSupply();
     totalSupply = totalSupply.toString();
 
     setSellingStep(sellingStep);
-    setWlSalePrice(wlSalePrice);
-    setBNWlSalePrice(wlSalePriceBN);
+    setWl1SalePrice(wl1SalePrice);
+    setWl2SalePrice(wl2SalePrice);
+    setBNWl2SalePrice(wl2SalePriceBN);
+    setWl3SalePrice(wl3SalePrice);
+    setBNWl3SalePrice(wl3SalePriceBN);
     setPublicSalePrice(publicSalePrice);
     setBNPublicSalePrice(publicSalePriceBN);
-    setTotalSupply(totalSupply);*/
-
-
-    setSellingStep(1);
-    /*setWlSalePrice(wlSalePrice);
-    setBNWlSalePrice(wlSalePriceBN);
-    setPublicSalePrice(publicSalePrice);
-    setBNPublicSalePrice(publicSalePriceBN);
-    setTotalSupply(totalSupply);*/
-
+    setTotalSupply(totalSupply)
     setIsLoading(false);
   }
 
@@ -98,9 +105,7 @@ export default function Home() {
             switch(sellingStep) {
               case null:
                 return <Spinner/>
-              case 0: 
-                return <Before/>
-              case 1:
+              default:
                 return <Flex
                   align="center"
                   flexDir="column"
@@ -113,8 +118,14 @@ export default function Home() {
                   marginX={["2vh", "2vh","2vh","2vh","0","0"]}
                   >
                   <CurrentSaleStep
-                    step="1"
+                    wave={sellingStep < 5 ? "1" : Math.floor((sellingStep-2)/ 3)+1}
+                    step={sellingStep}
                     startTimestamp={1678143604}
+                    BNPublicSalePrice={BNPublicSalePrice}
+                    wl1SalePrice={wl1SalePrice}
+                    BNWl2SalePrice={BNWl2SalePrice}
+                    BNWl3SalePrice={BNWl3SalePrice}
+                    getDatas={getDatas}
                   />
                 </Flex>
             }
