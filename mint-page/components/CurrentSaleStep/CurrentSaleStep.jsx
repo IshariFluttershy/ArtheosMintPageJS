@@ -18,7 +18,9 @@ const CurrentSaleStep = (props) => {
     const [days, setDays] = useState(null);
     const [timestamp, setTimestamp] = useState(Math.floor(Date.now() / 1000));
     const [isAvaliable, setIsAvaliable] = useState(false);
+    const [multipleMintAvaliable, setMultipleMintAvaliable] = useState(false);
     const [mintIsLoading, setMintIsLoading] = useState(false);
+    const [counter, setCounter] = useState(1);
 
     const saleStartTime = props.startTimestamp;
 
@@ -66,9 +68,9 @@ const CurrentSaleStep = (props) => {
             if (props.step == 4 || props.step == 7 || props.step == 10 || 
                 props.step == 13 || props.step ==16 || props.step == 19 || 
                 props.step == 22) {
-                transaction = await contract.publicMint(1, props.wave, overrides);
+                transaction = await contract.publicMint(counter, props.wave, overrides);
             } else {
-                transaction = await contract.whitelistMint(1, proof, props.wave, overrides);
+                transaction = await contract.whitelistMint(counter, proof, props.wave, overrides);
             }
             setMintIsLoading(true);
             await transaction.wait();
@@ -99,6 +101,15 @@ const CurrentSaleStep = (props) => {
             let date_now = new Date();
             date_now = new Date(date_now.getTime() +120*10000000000);
 
+            if (props.step == 4 || props.step == 7 || props.step == 10 || 
+                props.step == 13 || props.step ==16 || props.step == 19 || 
+                props.step == 22 || 
+                props.step == 3 || props.step == 6 || props.step == 9 || 
+                props.step == 12 || props.step ==15 || props.step == 18 || 
+                props.step == 21) {
+                setMultipleMintAvaliable(true);
+            }
+
             if (date_now > date_future) {
                 setIsLoading(false);
                 setIsAvaliable(true);
@@ -120,6 +131,25 @@ const CurrentSaleStep = (props) => {
             }
         }, 1000);
     }
+
+    //increase counter
+    const increase = () => {
+        if (counter < 5 && (props.step == 3 || props.step == 6 || props.step == 9 || 
+            props.step == 12 || props.step == 15 || props.step == 18 || 
+            props.step == 21)) {
+            setCounter(count => count + 1);
+        } else if (props.step == 4 || props.step == 7 || props.step == 10 || 
+            props.step == 13 || props.step ==16 || props.step == 19 || 
+            props.step == 22) {
+            setCounter(count => count + 1);
+        }
+    };
+    
+    //decrease counter
+    const decrease = () => {
+        if (counter > 1)
+            setCounter(count => count - 1);
+    };
     
     return (
         <Flex 
@@ -163,22 +193,61 @@ const CurrentSaleStep = (props) => {
                                     {mintIsLoading ? (
                                         <Text fontSize={["2.75rem", "2.75rem", "3rem", "3.5rem", "2.75rem", "3.5rem"]}>Mint en cours</Text>
                                     ) : (
-                                    <Button
-                                        colorScheme="cyan"
-                                        bgGradient="linear(to-b, #ffffff00, #61a6ceff)"
-                                        _hover={{
-                                            bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
-                                        }}
-                                        _active={{
-                                            bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
-                                        }}
-                                        fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
-                                        padding={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
-                                        margin={["1.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
-                                        onClick={mint}
-                                    >
-                                        Mint now !
-                                    </Button>
+                                    <>
+                                        <Button
+                                            colorScheme="cyan"
+                                            bgGradient="linear(to-b, #ffffff00, #61a6ceff)"
+                                            _hover={{
+                                                bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
+                                            }}
+                                            _active={{
+                                                bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
+                                            }}
+                                            fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
+                                            padding={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
+                                            margin={["1.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
+                                            onClick={mint}
+                                        >
+                                            Mint now !
+                                        </Button>
+                                        {multipleMintAvaliable ? (
+                                            <>
+                                                <Flex>
+                                                <Button className="control__btn" onClick={decrease}                                          
+                                                        colorScheme="cyan"
+                                                        bgGradient="linear(to-b, #ffffff00, #61a6ceff)"
+                                                        _hover={{
+                                                            bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
+                                                        }}
+                                                        _active={{
+                                                            bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
+                                                    }}
+                                                    padding={["1.25rem", "1.25rem", "1.5rem", "2rem", "1.5rem", "2rem"]}
+                                                    fontSize={["1.25rem", "1.25rem", "1.5rem", "2rem", "1.5rem", "2rem"]}
+                                                    >-</Button>
+       
+                                                    <Text className="counter__output"
+                                                        marginX={["1.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
+                                                        fontSize={["2.5rem", "2.5rem", "3rem", "4rem", "3rem", "4rem"]}
+                                                    >{counter}
+                                                    </Text>
+                                                    <Button className="control__btn" onClick={increase}                                          
+                                                        colorScheme="cyan"
+                                                        bgGradient="linear(to-b, #ffffff00, #61a6ceff)"
+                                                        _hover={{
+                                                            bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
+                                                        }}
+                                                        _active={{
+                                                            bgGradient: 'linear(to-b, #ffffff00, #61a6ceff)',
+                                                    }}
+                                                    padding={["1.25rem", "1.25rem", "1.5rem", "2rem", "1.5rem", "2rem"]}
+                                                    fontSize={["1.25rem", "1.25rem", "1.5rem", "2rem", "1.5rem", "2rem"]}
+
+                                                    >+</Button>
+                                                </Flex>
+                                            </>
+                                        ) : (<></>)}
+                                    </>
                                     )}  
                                 </>
                             ) : (
