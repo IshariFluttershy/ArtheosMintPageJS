@@ -99,7 +99,7 @@ const CurrentSaleStep = (props) => {
             let unixTime = saleStartTime * 1000;
             let date_future = new Date(unixTime);
             let date_now = new Date();
-            date_now = new Date(date_now.getTime() +120*10000000000);
+            date_now = new Date(date_now.getTime());
 
             if (props.step == 4 || props.step == 7 || props.step == 10 || 
                 props.step == 13 || props.step ==16 || props.step == 19 || 

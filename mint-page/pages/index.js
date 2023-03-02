@@ -114,7 +114,7 @@ export default function Home() {
                   p={["2rem", "2rem", "2rem", "2rem", "0"]}   
                   position={["null", "null", "null", "null", "absolute", "absolute"]}
                   top={["null", "null","null","null","10%","10%"]}
-                  left={["null", "null","null","null","36%","38%"]}
+                  left={["null", "null","null","null","32%","34%"]}
                   marginX={["2vh", "2vh","2vh","2vh","0","0"]}
                   >
                   <CurrentSaleStep
