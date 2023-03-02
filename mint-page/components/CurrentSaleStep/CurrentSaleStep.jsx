@@ -85,7 +85,7 @@ const CurrentSaleStep = (props) => {
         } catch(e) {
             console.log(e);
             toast({
-                description: "An error occured",
+                description: e.reason,
                 status: "error",
                 duration: 4000,
                 isClosable: true

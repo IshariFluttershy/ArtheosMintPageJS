@@ -39,7 +39,7 @@ const Header = () => {
                     setAccount(null)
                     setIsLoading(false)
                     toast({
-                        description: "Please switch to main Ethereum network on Metamask",
+                        description: "Please switch to main Polygon network on Metamask",
                         status: "error",
                         duration: 4000,
                         isClosable: "true"
