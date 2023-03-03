@@ -24,7 +24,7 @@ const Header = () => {
             if(provider) {
                 let network = await provider.getNetwork();
 
-                if(network.chainId !== 1) {
+                if(network.chainId === 137) {
                     const resultAccount = await provider.send("eth_requestAccounts", []);
                     setAccount(ethers.utils.getAddress(resultAccount[0]));
                     setIsLoading(false);
