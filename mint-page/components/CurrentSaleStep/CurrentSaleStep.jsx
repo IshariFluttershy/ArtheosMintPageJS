@@ -3,7 +3,9 @@ import { Image, Button, Flex, Spinner, useToast, chakra, Text, Center} from "@ch
 import useEthersProvider from "../../hooks/useEthersProvider";
 import Contract from "../../ArtheosYushaERC721R.json";
 import { ethers } from "ethers";
-import tokens from "../../tokens.json";
+import tokens1 from "../../tokens1.json";
+import tokens2 from "../../tokens2.json";
+import tokens3 from "../../tokens3.json";
 import { MerkleTree } from "merkletreejs";
 import keccak256 from "keccak256"; 
 import { CONTRACT_ADDRESS } from "../../utils/constants";
@@ -34,15 +36,7 @@ const CurrentSaleStep = (props) => {
     const mint = async() => {
         const signer = provider.getSigner();
         const contract = new ethers.Contract(contractAddress, Contract.abi, signer);
-
-        let tab = [];
-        tokens.map((token) => {
-            tab.push(token.address);
-        });
-        let leaves = tab.map((address) => keccak256(address));
-        let tree = new MerkleTree(leaves, keccak256, {sort: true});
-        let leaf = keccak256(account);
-        let proof = tree.getHexProof(leaf);
+        let usedTokens;
 
         let value;
         if (props.step == 4 || props.step == 7 || props.step == 10 || 
@@ -51,13 +45,25 @@ const CurrentSaleStep = (props) => {
             value = await props.BNPublicSalePrice;
         } else if (props.step == 1) {
             value = await props.wl1SalePrice;
+            usedTokens = tokens1;
         } else if (props.step == 2 || props.step == 5 || props.step == 8 || 
             props.step == 11 || props.step == 14 || props.step == 17 || 
             props.step == 20) {
             value = await props.BNWl2SalePrice;
+            usedTokens = tokens2;
         } else {
             value = await props.BNWl3SalePrice;
+            usedTokens = tokens3;
         }
+
+        let tab = [];
+        usedTokens.map((token) => {
+            tab.push(token.address);
+        });
+        let leaves = tab.map((address) => keccak256(address));
+        let tree = new MerkleTree(leaves, keccak256, {sort: true});
+        let leaf = keccak256(account);
+        let proof = tree.getHexProof(leaf);
 
         let overrides = {
             value: value

@@ -21,7 +21,7 @@ export default function Home() {
   const { account, provider } = useEthersProvider();
   const [isLoading, setIsLoading] = useState(false);
   const [sellingStep, setSellingStep] = useState(null);
-  const [saleStartTime, setSaleStartTime] = useState(null);
+  const [saleStartTime, setSaleStartTime] = useState(1677884400);
   const [wl1SalePrice, setWl1SalePrice] = useState(null);
   const [BNWl2SalePrice, setBNWl2SalePrice] = useState(null);
   const [wl2SalePrice, setWl2SalePrice] = useState(null);
@@ -44,7 +44,38 @@ export default function Home() {
   const getDatas = async() => {
     setIsLoading(true);
     const contract = new ethers.Contract(contractAddress, Contract.abi, provider);
-    const sellingStep = await contract.sellingStep();
+    let sellingStep = 0;
+    let date_now = new Date();
+    date_now = new Date(date_now.getTime());
+    let currentTimestamp = date_now.getTime()/1000;
+    if (currentTimestamp > 1677884400) {sellingStep = 1;}
+    if (currentTimestamp > 1677970800) {sellingStep = 2;}
+    if (currentTimestamp > 1678057200) {sellingStep = 3;}
+    if (currentTimestamp > 1678143600) {sellingStep = 4;}
+
+    if (currentTimestamp > 1680645600) {sellingStep = 5;}
+    if (currentTimestamp > 1680732000) {sellingStep = 6;}
+    if (currentTimestamp > 1680818400) {sellingStep = 7;}
+
+    if (currentTimestamp > 1683237600) {sellingStep = 8;}
+    if (currentTimestamp > 1683324000) {sellingStep = 9;}
+    if (currentTimestamp > 1683410400) {sellingStep = 10;}
+
+    if (currentTimestamp > 1685916000) {sellingStep = 11;}
+    if (currentTimestamp > 1686002400) {sellingStep = 12;}
+    if (currentTimestamp > 1686088800) {sellingStep = 13;}
+
+    if (currentTimestamp > 1688508000) {sellingStep = 14;}
+    if (currentTimestamp > 1688594400) {sellingStep = 15;}
+    if (currentTimestamp > 1688680800) {sellingStep = 16;}
+
+    if (currentTimestamp > 1691186400) {sellingStep = 17;}
+    if (currentTimestamp > 1691272800) {sellingStep = 18;}
+    if (currentTimestamp > 1691359200) {sellingStep = 19;}
+
+    if (currentTimestamp > 1693864800) {sellingStep = 20;}
+    if (currentTimestamp > 1693951200) {sellingStep = 21;}
+    if (currentTimestamp > 1694037600) {sellingStep = 22;}
     
     let wl1SalePrice = 0;
 
@@ -114,13 +145,13 @@ export default function Home() {
                   p={["2rem", "2rem", "2rem", "2rem", "0"]}   
                   position={["null", "null", "null", "null", "absolute", "absolute"]}
                   top={["null", "null","null","null","10%","10%"]}
-                  left={["null", "null","null","null","32%","34%"]}
+                  left={["null", "null","null","null","36%","38%"]}
                   marginX={["2vh", "2vh","2vh","2vh","0","0"]}
                   >
                   <CurrentSaleStep
                     wave={sellingStep < 5 ? "1" : Math.floor((sellingStep-2)/ 3)+1}
                     step={sellingStep}
-                    startTimestamp={1678143604}
+                    startTimestamp={saleStartTime}
                     BNPublicSalePrice={BNPublicSalePrice}
                     wl1SalePrice={wl1SalePrice}
                     BNWl2SalePrice={BNWl2SalePrice}
@@ -192,7 +223,7 @@ export default function Home() {
           margin="0"
         >
           <SaleStep 
-            startTimestamp={1678143604}
+            startTimestamp={1677884400}
             step="1" 
             align="left" 
             imgSource="Capsule_Paresse"
@@ -204,7 +235,7 @@ export default function Home() {
           top={["null", "null", "null", "null", "46.4%", "47%"]}
         >
           <SaleStep 
-            startTimestamp={1680818404}
+            startTimestamp={1680645600}
             step="2"  
             align="right" 
             imgSource="Capsule_Colere"
@@ -217,7 +248,7 @@ export default function Home() {
           left={["null", "null", "null", "null", "5%"]}
         >
           <SaleStep 
-            startTimestamp={1683410404}
+            startTimestamp={1683237600}
             step="3"  
             align="left" 
             imgSource="Capsule_Luxure"
@@ -229,7 +260,7 @@ export default function Home() {
           top={["null", "null", "null", "null", "60.5%", "61.1%"]}
         >
           <SaleStep 
-            startTimestamp={1686088804}
+            startTimestamp={1685916000}
             step="4"  
             align="right" 
             imgSource="Capsule_Gourmandise"
@@ -241,7 +272,7 @@ export default function Home() {
           left={["null", "null", "null", "null", "5%"]}
         >
           <SaleStep 
-            startTimestamp={1688680800}
+            startTimestamp={1688508000}
             step="5"  
             align="left" 
             imgSource="Capsule_Envie"
@@ -253,7 +284,7 @@ export default function Home() {
           top={["null", "null", "null", "null", "74.3%", "74.9%"]}
         >
           <SaleStep 
-            startTimestamp={1691359200}
+            startTimestamp={1691186400}
             step="6" 
             align="right" 
             imgSource="Capsule_Orgueil"
@@ -266,7 +297,7 @@ export default function Home() {
           left={["null", "null", "null", "null", "5%"]}
         >
           <SaleStep 
-            startTimestamp={1694037600}
+            startTimestamp={1693864800}
             step="7"  
             align="left" 
             imgSource="Capsule_Avarice"
